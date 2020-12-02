@@ -1,0 +1,6 @@
+/* Tailwind base file */
+
+/*! @import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
