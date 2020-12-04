@@ -1,24 +1,30 @@
-# hs-airdrop-gui
+# Handshake Airdrop GUI
 
-## Project setup
-```
+Redemption tool for the Handshake network's decentralized airdrop to open source developers.
+
+This uses https://github.com/handshake-org/hs-airdrop under the hood to create proofs.
+
+## Usage
+
+Download the [latest release](https://github.com/rithvikvibhu/hs-airdrop-gui/releases) for your platform and simply run it.
+
+
+## Development
+
+First install dependencies with
+
+```sh
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+### To start a Development Server
+
+```sh
+npm run electron:serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### To Build the App
 
-### Lints and fixes files
+```sh
+npm run electron:build
 ```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
