@@ -1,5 +1,7 @@
 'use strict'
+/* global __static */
 
+const path = require('path')
 import { app, protocol, BrowserWindow } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
@@ -13,13 +15,15 @@ protocol.registerSchemesAsPrivileged([
 async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 900,
+    height: 650,
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
+      preload: path.join(__dirname, 'preload.js'),
     },
+    icon: path.join(__static, 'icon.png'),
   })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
@@ -28,6 +32,7 @@ async function createWindow() {
     if (!process.env.IS_TEST) win.webContents.openDevTools()
   } else {
     createProtocol('app')
+    win.setMenu(null)
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
   }
@@ -81,3 +86,6 @@ if (isDevelopment) {
     })
   }
 }
+
+// Custom code from here
+const airdrop = require('./airdrop')

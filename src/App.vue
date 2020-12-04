@@ -1,30 +1,27 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="min-h-screen flex flex-col">
+    <header
+      class="flex-shrink-0 px-20 py-7 text-center bg-gradient-to-br from-gray-100 to-gray-300"
+    >
+      <div class="flex items-center justify-center">
+        <img class="w-8 h-8 mr-3" src="/icon.png" alt="Handshake Logo" />
+        <!-- <img
+          class="w-8 h-8 mr-3"
+          src="https://avatars0.githubusercontent.com/u/29678722?s=200&v=4"
+          alt="Handshake Logo"
+        /> -->
+        <h1 class="text-2xl">Handshake Airdrop</h1>
+      </div>
+      <p class="mt-4 font-light">
+        Redemption tool for the Handshake network's decentralized airdrop to
+        open source developers
+      </p>
+    </header>
+    <router-view />
   </div>
-  <router-view />
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<script>
+export default {}
+</script>
+<style lang="scss"></style>
