@@ -21,9 +21,43 @@ Very few changes have been made to the core [proof creating logic](https://githu
 
 If you are comfortable with a terminal, check out [the official cli](https://github.com/handshake-org/hs-airdrop).
 
-## Usage
+## Installation
+This is a portable app and does not need to be installed anywhere.  
+2 ways to go about this: either download prebuilt binaries, or build from source.
 
+### Using pre-built binaries
 Download the [latest release](https://github.com/rithvikvibhu/hs-airdrop-gui/releases) for your platform and simply run it (exe for Windows, appimage/snap for Linux).
+
+Optionally, verify release signatures:
+```sh
+# Import this public key
+gpg --recv-keys 0393D7636C08EFA8A781F9CDE85101DF1682E27F
+
+# Download the SHA256SUMS.asc file included in each release
+
+# Verify that it is signed with this key.
+# The output should say: Good signature from "Rithvik Vibhu <rithvikvibhu@gmail.com>"
+gpg --decrypt SHA256SUMS.asc
+
+# Compare the executable digest with the one listed in SHA256SUMS.asc
+sha256sum hs-airdrop-gui_0.1.0_amd64.snap
+
+# If the hashes don't match, re-download the executable.
+```
+
+### Build from source
+This is pretty much the same as the Development section below.
+```sh
+# Clone this repo
+git clone https://github.com/rithvikvibhu/hs-airdrop-gui
+
+# Build the app (nodejs v14 must is installed)
+npm run electron:build
+
+# The built app will be in ./electron_dist/
+```
+
+## Usage
 
 <img src="https://i.imgur.com/hBBGv7u.png" width="45%"></img> <img src="https://i.imgur.com/dA24rAD.png" width="45%"></img> <img src="https://i.imgur.com/CuLh66Y.png" width="45%"></img> <img src="https://i.imgur.com/VIwoCUt.png" width="45%"></img> <img src="https://i.imgur.com/5fe293G.png" width="45%"></img> <img src="https://i.imgur.com/AvOS6uI.png" width="45%"></img>
 
