@@ -1,6 +1,6 @@
 {
   "name": "hs-airdrop-gui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Redemption tool for the Handshake network's decentralized airdrop to open source developers",
   "homepage": "https://github.com/rithvikvibhu/hs-airdrop-gui",
   "repository": {

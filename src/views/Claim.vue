@@ -45,6 +45,11 @@
             proceed.<br />
             For faucet rewards, just the handshake address is enough.
           </p>
+          <p>
+            <span class="font-medium">Note:</span> With goosig disabled (since
+            block #52590), RSA keys used to claim the airdrop will be
+            identifiable on the chain.
+          </p>
           <p>Select how you want to create the proof:</p>
         </div>
 
@@ -441,7 +446,7 @@ export default {
         this.proofs = []
         window.ipcRenderer.send('redeem', {
           keyType: this.keyType,
-          privKey: this.privateKey.replace(/^\s+/gm, ''),
+          privKey: this.privateKey.trim().replace(/^\s+/gm, ''),
           keyId: this.keyId,
           hnsAddr: this.hnsAddress,
           passphrase: this.isKeyEncrypted ? this.keyPassphrase : '',
@@ -456,7 +461,7 @@ export default {
         case 'ssh':
           if (
             !/^-----BEGIN \w+ PRIVATE KEY-----[^]+-----END \w+ PRIVATE KEY-----$/.test(
-              this.privateKey
+              this.privateKey.trim()
             )
           )
             return false
@@ -465,7 +470,7 @@ export default {
         case 'pgp':
           if (
             !/^-----BEGIN PGP PRIVATE KEY BLOCK-----[^]+-----END PGP PRIVATE KEY BLOCK-----$/.test(
-              this.privateKey
+              this.privateKey.trim()
             )
           )
             return false

@@ -550,7 +550,7 @@ async function redeemStart({ keyType, privKey, keyId, hnsAddr, passphrase }) {
     const options = {
       __proto__: null,
       files: [],
-      bare: false,
+      bare: true,
       type: keyType,
       key: null,
       entries: [],
